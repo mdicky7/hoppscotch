@@ -18,6 +18,7 @@ services:
       - "./helpers:/app/helpers"
     ports:
       - "3000:3000"
+    mem_limit: 2048mb
     environment:
       HOST: 0.0.0.0
     command: "pnpm run dev"
