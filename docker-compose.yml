@@ -4,10 +4,7 @@ services:
   web:
     build:
       context: .
-      resources:
-              limits:
-                cpus: 2
-                memory: 2049M
+    mem_limit: 2048
     volumes:  
       - "./.hoppscotch:/app/.hoppscotch"
       - "./assets:/app/assets"
