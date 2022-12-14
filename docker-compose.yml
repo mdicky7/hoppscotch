@@ -4,6 +4,10 @@ services:
   web:
     build:
       context: .
+    resources:
+            limits:
+              cpus: 2
+              memory: 2049M
     volumes:
       - "./.hoppscotch:/app/.hoppscotch"
       - "./assets:/app/assets"
@@ -18,7 +22,6 @@ services:
       - "./helpers:/app/helpers"
     ports:
       - "3000:3000"
-    mem_limit: 2048mb
     environment:
       HOST: 0.0.0.0
     command: "pnpm run dev"
